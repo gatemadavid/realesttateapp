@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %} | Dashboard {% endblock %}
+
+{% block content %}
+
+{% include 'partials/_alerts.html' %}
+
+<section id="showcase-inner">
+ 
+</section>
+
+<section id="dashboard" class="py-4">
+  <div class="container">
+    <div class="row breadcrumb-dash">
+      <div class="col-md-4 pt-3 ">
+          <img src="../../real/static/img/building.jpg" style="height:150px; width:150px;" alt="">
+               
+        {% if user.is_authenticated %}
+            Welcome {{user.first_name}}
+        {% endif %}
+
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <ul class="pt-3">
+          <li class="mr-3"> 
+            <a class="text-white" href="" data-toggle="tooltip" data-placement="top" title="Messages"
+            ><i class="far fa-envelope"></i>
+              
+            </a>
+          </li>
+          <li class="mr-3">
+            <a class="text-white" href="" data-toggle="tooltip" data-placement="top" title="Profile" ><i class="fas fa-user"></i></a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-white my-3">Your Inquiries</h4>
+
+        <table class="table table-hover table-dark ">
+            <thead>
+              <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Title</th>
+                <th scope="col">View</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for contact in contacts%}
+              <tr>
+                <th scope="row">{{contact.id}}</th>
+                <td>{{contact.listing}}</td>
+                 <td><a class="btn btn-primary" href="{url 'listing' contact.listing_id}">View Listing</a></td>
+              </tr>
+              {% endfor %}
+             
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+   
+  </div>
+</section>
+
+{% endblock %} 
