@@ -53,7 +53,7 @@
                        <div class="col-md-12 mb-5">
                           <label class="sr-only">Bedrooms</label>
                           <select name="bedrooms" class="form-control">
-                            <option selected="true">Bedrooms (All)</option>
+                            <option value="0" selected="true">Bedrooms (All)</option>
                             {% for key, value in bedroom_choices.items %}
                             <option value="{{ key }}">{{ value }}</option>
                             {% endfor %}
@@ -62,7 +62,7 @@
 
                       <div class="col-md-12 mb-5">
                           <select name="price" class="form-control" id="type">
-                            <option selected="true" >Max Price (Any)</option>
+                            <option value="0" selected="true" >Max Price (Any)</option>
                             {% for key, value in price_choices.items %}
                             <option value="{{ key }}">{{ value }}</option>
                             {% endfor %}
