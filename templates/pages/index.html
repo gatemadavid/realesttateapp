@@ -88,7 +88,20 @@
 <!-- subscription section -->
 
 <section id="subscribe">
-  input
+  <div class="container">
+    <h6 class="text-center text-white pt-5">
+      Subscribe to Receive Updates on New Listings
+    </h6>
+    <form class="subscribe_form">
+         <div class="input-group">
+          <input type="text" class="form-control" name="email" placeholder="Enter your email">
+          <span class="input-group-btn">
+               <button class="btn btn-success" type="button">subscribe</button>
+          </span>
+       </div>
+    </form>
+  </div>
+  
 </section>
  
 <!-- featured section -->
@@ -131,7 +144,7 @@
             </div>
             {% endfor %} {% else %}
             <div class="col-md-12">
-              <p>No Listings</p>
+              <p class="text-center">No Listings Available</p>
             </div>
             {% endif %}
 
