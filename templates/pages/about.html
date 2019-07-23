@@ -79,7 +79,7 @@
              <div class="col-md-12 mb-5">
                 <label class="sr-only">Bedrooms</label>
                 <select name="bedrooms" class="form-control">
-                  <option selected="true" required>Bedrooms (All)</option>
+                  <option value="0" selected="true" required>Bedrooms (All)</option>
                   {% for key, value in bedroom_choices.items %}
                   <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
@@ -88,7 +88,7 @@
 
             <div class="col-md-12 mb-4">
                 <select name="price" class="form-control" id="type">
-                  <option selected="true" >Max Price (Any)</option>
+                  <option value="0" selected="true" >Max Price (Any)</option>
                   {% for key, value in price_choices.items %}
                   <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
@@ -100,23 +100,6 @@
           </button>
         </form>
 
-
-        <!-- {% if mvp_realtors %} {% for mvp in mvp_realtors %}
-        <div class="card">
-          <img
-            class="card-img-top"
-            src="{{ mvp.photo.url }}"
-            alt="Seller of the month"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Seller Of The Month</h5>
-            <h6 class="text-secondary">{{ mvp.name }}</h6>
-            <p class="card-text">
-              {{ mvp.description }}
-            </p>
-          </div>
-        </div>
-        {% endfor %} {% endif %} -->
       </div>
 
 
