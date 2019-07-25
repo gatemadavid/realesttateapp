@@ -1,85 +1,46 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block title %} | Register {% endblock %}
 
 {% block content %}
-<section id="login" class="bg-light py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="card">
-          <div class="card-header bg-primary text-white">
-            <h4> Register</h4>
-          </div>
-          <div class="card-body">
-            <!-- alerts -->
-            {% include 'partials/_alerts.html' %}
-            <form action="{% url 'register' %}" method="POST">
-              {% csrf_token %}
-              <div class="form-group">
-                <label for="first_name">First Name</label>
-                <input
-                  type="text"
-                  name="first_name"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="last_name">Last Name</label>
-                <input
-                  type="text"
-                  name="last_name"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input
-                  type="text"
-                  name="username"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="password2">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="password">Confirm Password</label>
-                <input
-                  type="password"
-                  name="password2"
-                  class="form-control"
-                  required
-                />
-              </div>
-              <input
-                type="submit"
-                value="Register"
-                class="btn btn-primary btn-block"
-              />
-            </form>
-          </div>
-        </div>
-      </div>
+
+<section id="form-area">
+  {% include 'partials/_alerts.html' %}
+  <form class="register-form" action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <h3>Register</h3>
+
+    <div class="txtb">
+      <input type="text" name="first_name" required>
+      <span data-placeholder="First Name"></span>
     </div>
-  </div>
+
+    <div class="txtb">
+        <input type="text" name="last_name" required>
+        <span data-placeholder="Last Name"></span>
+      </div>
+    
+    <div class="txtb">
+      <input type="text" name="username" required>
+      <span data-placeholder="Username"></span>
+    </div>
+    <div class="txtb">
+        <input type="email" name="email" required>
+        <span data-placeholder="Email"></span>
+      </div>
+    <div class="txtb">
+      <input type="password" name="password" required>
+      <span data-placeholder="Password"></span>
+    </div>
+    <div class="txtb">
+        <input type="password" name="password2" required>
+        <span data-placeholder="Confirm Password"></span>
+      </div>
+
+    <input type="submit" class="logbtn" value="Register">
+
+  </form>
+
 </section>
+
 
 {% endblock %}
