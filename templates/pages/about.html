@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} 
+{% extends 'base.html' %} {% load static %}
 {% block title %} | About {% endblock %}
 {% block content %}
 <section id="showcase-inner">
@@ -7,7 +7,7 @@
       <div class="col-md-12 content">
         <h1>About Us</h1>
         <p>
-         Welcome to Villa Realtors
+          Welcome to Villa Realtors
         </p>
       </div>
     </div>
@@ -33,68 +33,58 @@
     <div class="row">
       <div class="col-md-8">
         <h2 class="my-4">Our Mission</h2>
-         <img src="{% static 'img/photo3.jpg' %}" alt="" />
+        <img src="{% static 'img/photo3.jpg' %}" alt="" />
         <p class="mt-4">
-            At Villa Care Realtors, we are passionate about delivering exceptional consumer experiences.
-             We offer a wide range of real estate services and we ensure that we meet our consumers’ 
-             needs. We are dedicated to provide satisfactory sales, rental, mortgage, insurance, and
-             interior designs. Our experts in various fields are willing to guide you through your
-             real estate journey.
+          At Villa Care Realtors, we are passionate about delivering exceptional consumer experiences.
+          We offer a wide range of real estate services and we ensure that we meet our consumers’
+          needs. We are dedicated to provide satisfactory sales, rental, mortgage, insurance, and
+          interior designs. Our experts in various fields are willing to guide you through your
+          real estate journey.
         </p>
       </div>
-      <div class="col-md-4" >
-       
-          <form action="{% url 'search' %}" class="about-search py-3">
-              <h5 class="text-center mb-3"><i class="fas fa-search"></i> Search Property</h5>
-              <div class="col-md-12 mb-5">
-              <label class="sr-only">Keywords</label>
-              <input
-                type="text"
-                name="keywords"
-                class="form-control"
-                placeholder="Keyword (Pool, Garage, etc)"
-              />
-            </div>
+      <div class="col-md-4">
 
-            <div class="col-md-12 mb-5">
-              <label class="sr-only">City</label>
-              <input
-                type="text"
-                name="city"
-                class="form-control"
-                placeholder="City"
-              />
-            </div>
+        <form action="{% url 'search' %}" class="about-search py-3">
+          <h5 class="text-center mb-3"><i class="fas fa-search"></i> Search Property</h5>
+          <div class="col-md-12 mb-5">
+            <label class="sr-only">Keywords</label>
+            <input type="text" name="keywords" class="form-control" placeholder="Keyword (Pool, Garage, etc)" />
+          </div>
 
-            <div class="col-md-12 mb-5">
-              <label class="sr-only">State</label>
-              <select name="state" class="form-control">
-                <option selected="true">State (All)</option >
-                {% for key, value in state_choices.items %}
-                <option value="{{ key }}">{{ value }}</option>
-                {% endfor %}
-              </select>
-            </div>
+          <div class="col-md-12 mb-5">
+            <label class="sr-only">City</label>
+            <input type="text" name="city" class="form-control" placeholder="City" />
+          </div>
 
-             <div class="col-md-12 mb-5">
-                <label class="sr-only">Bedrooms</label>
-                <select name="bedrooms" class="form-control">
-                  <option value="0" selected="true" required>Bedrooms (All)</option>
-                  {% for key, value in bedroom_choices.items %}
-                  <option value="{{ key }}">{{ value }}</option>
-                  {% endfor %}
-                </select>
-            </div>
+          <div class="col-md-12 mb-5">
+            <label class="sr-only">State</label>
+            <select name="state" class="form-control">
+              <option selected="true">State (All)</option>
+              {% for key, value in state_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
 
-            <div class="col-md-12 mb-4">
-                <select name="price" class="form-control" id="type">
-                  <option value="0" selected="true" >Max Price (Any)</option>
-                  {% for key, value in price_choices.items %}
-                  <option value="{{ key }}">{{ value }}</option>
-                  {% endfor %}
-                </select>
-              </div>             
-          
+          <div class="col-md-12 mb-5">
+            <label class="sr-only">Bedrooms</label>
+            <select name="bedrooms" class="form-control">
+              <option value="0" selected="true" required>Bedrooms (All)</option>
+              {% for key, value in bedroom_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <select name="price" class="form-control" id="type">
+              <option value="0" selected="true">Max Price (Any)</option>
+              {% for key, value in price_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
           <button class="btn btn-primary mx-3" type="submit">
             Search Properties
           </button>
@@ -108,41 +98,6 @@
   </div>
 </section>
 
-<!-- Work -->
-<section id="work">
-  <h2 class="text-white mb-5">Company Facts</h2>
-  <div class="container">
-    <div class="row facts">
-      <div class="col-md-3 ">
-          <i class="fas fa-briefcase"></i>
-          <p>3 000</p>
-          <h6>Transactions</h6>
-      </div>
-      <div class="col-md-3">
-          <i class="fas fa-user-friends"></i>
-         <p> 20 000</p>
-          <h6>Satisfied Customers</h6>
-
-        </div>
-        <div class="col-md-3">
-            <i class="fas fa-building"></i>
-            <p>100</p>
-            <h6>Partner Agencies</h6>
-
-          </div>
-          <div class="col-md-3">
-              <i class="fas fa-funnel-dollar"></i>
-            <p>1 000</p>
-            <h6>Sales and Rentals</h6>
-            </div>
-    </div>
-  </div>
-  
-  <hr />
-  <a href="{% url 'listings' %}" class="btn btn-secondary text-white btn-lg"
-    >View Listed Properties</a
-  >
-</section>
 
 <!-- Team -->
 <section id="team" class="py-5">
@@ -153,31 +108,31 @@
       <div class="col-md-3">
         <div class="team-details">
           <div class="team-image">
-              <img src="{{ realtor.photo.url }}" alt="" />
+            <img src="{{ realtor.photo.url }}" alt="" />
           </div>
           <div class="team-body pb-3">
-              <h4 class="mt-4">{{ realtor.name }}</h4>
-              <hr />
-              <p><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
-              <p><i class="fas fa-envelope-open"></i> {{ realtor.email }}</p>
-              
+            <h4 class="mt-4">{{ realtor.name }}</h4>
+            <hr />
+            <p><i class="fas fa-phone"></i> {{ realtor.phone }}</p>
+            <p><i class="fas fa-envelope-open"></i> {{ realtor.email }}</p>
+
           </div>
           <div class="team-social mb-3">
-              <a href="#">
-                <i class="fab fa-twitter text-white"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-facebook text-white"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-linkedin text-white"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-instagram text-white"></i>
-              </a>
-            </div>
+            <a href="#">
+              <i class="fab fa-twitter text-white"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-facebook text-white"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin text-white"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-instagram text-white"></i>
+            </a>
+          </div>
         </div>
-              
+
       </div>
       {% endfor %} {% else %}
       <div class="col-md-12">
