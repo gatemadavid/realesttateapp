@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
 .btn-secondary {
   color: #fff !important;
 }
@@ -105,9 +111,9 @@ header a:hover {
 }
 
 .nav__link--btn--highlight {
-  background: #0ed185;
-  border-color: #0ed185;
-  color: #333;
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
 }
 
 .nav__link--btn--highlight:hover {
@@ -197,7 +203,8 @@ header a:hover {
   background: #0f294d;
   height: 17vh;
 }
-#subscribe h6{
+
+#subscribe h6 {
   font-weight: 600;
   font-size: 20px;
 }
@@ -208,12 +215,15 @@ header a:hover {
   width: 100%;
   margin: 0 auto;
 }
+
 .subscribe_form .form-control {
   border: none;
 }
+
 .subscribe_form .form-control:focus {
   box-shadow: none;
 }
+
 .subscribe_form input {
   height: 44px;
 }
@@ -234,8 +244,7 @@ header a:hover {
   -ms-transition: all ease 0.3s;
 }
 
-.subscribe_form button:hover
-{
+.subscribe_form button:hover {
   color: #fff;
   background-color: rgba(14, 208, 133, 0.77);
   outline: none;
@@ -353,39 +362,6 @@ header a:hover {
   border-radius: 5px;
 }
 
-#work {
-  padding: 3rem 0;
-  background: #2c3d4d;
-  text-align: center;
-  height: 50vh;
-}
-
-#work i {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-#work p {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-#work h6 {
-  font-size: 1rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
-
-#work h2 {
-  font-weight: 900;
-  font-size: 2.5rem;
-}
-
-.facts {
-  color: #d4af37;
-}
-
 #team {
   background: #f9f9f9;
 }
@@ -432,17 +408,9 @@ header a:hover {
   transition: visibility 1s ease-in-out;
 }
 
-#login {
-  /* background:#f2f2f2;
-   */
-  background: url("../img/photo5.jpeg");
-  height: 90vh;
-  padding-top: 10em;
-}
-
 #dashboard {
-  background: #151f36;
-  height: 100vh;
+  background: linear-gradient(120deg, #2b5876, #4e4376);
+  min-height: 50vh;
 }
 
 .table {
@@ -513,4 +481,113 @@ header a:hover {
   #showcase-inner h1 {
     font-size: 40px;
   }
+}
+
+#form-area {
+  --primary-gradient: linear-gradient(120deg, #4b6cb7, #182848);
+  min-height: 93vh;
+  background-image: var(--primary-gradient);
+}
+
+.login-form {
+  width: 360px;
+  background: #f1f1f1;
+  height: 580px;
+  padding: 60px 40px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register-form {
+  width: 360px;
+  background: #f1f1f1;
+  height: 630px;
+  padding: 40px 40px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register-form h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-form h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.txtb {
+  border-bottom: 2px solid #adadad;
+  position: relative;
+  margin: 30px 0;
+}
+
+.txtb input {
+  font-size: 15px;
+  border: none;
+  color: #333;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0 5px;
+  height: 40px;
+
+}
+
+.txtb span::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  color: #051937;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: .5s;
+}
+
+.txtb span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: .5s;
+}
+
+.focus+span::before {
+  top: -5px;
+}
+
+.focus+span::after {
+  width: 100%;
+}
+
+.logbtn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: var(--primary-gradient);
+  color: #fff;
+  background-size: 200%;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.logbtn:hover {
+  background-position: right;
+}
+
+.bottom-text {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 13px;
 }
